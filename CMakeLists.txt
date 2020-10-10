@@ -36,7 +36,7 @@ if(RESET)
     file(WRITE ${PYTORCH_SRC_DIR}/cmake/Codegen.cmake "${FILE_CONTENTS}")
 
     file(READ ${PYTORCH_SRC_DIR}/caffe2/core/common.h FILE_CONTENTS)
-    string(REPLACE "caffe2/core/macros.h" "../libtorch_subdir/build/caffe2/core/macros.h" FILE_CONTENTS "${FILE_CONTENTS}")
+    string(REPLACE "caffe2/core/macros.h" "${CMAKE_SOURCE_DIR}/build/caffe2/core/macros.h" FILE_CONTENTS "${FILE_CONTENTS}")
     file(WRITE ${PYTORCH_SRC_DIR}/caffe2/core/common.h "${FILE_CONTENTS}")
 
 endif()
