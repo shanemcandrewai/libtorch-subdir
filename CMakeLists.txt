@@ -5,6 +5,7 @@ project(libtorch_subdir)
 set(PYTORCH_SRC_DIR ../pytorch)
 
 include(CMakeDependentOption)
+option(DEBUG "Debugging information" ON)
 option(RESET "Restore and clean PyTorch source tree")
 CMAKE_DEPENDENT_OPTION(NO_BUILD_SHARED_LIBS "Build libcaffe2.so" ON RESET OFF)
 option(USE_CUDA "disable compiling CUDA, to save compile time")
@@ -17,6 +18,10 @@ option(USE_XNNPACK "disable compiling with XNNPACK")
 option(BUILD_CUSTOM_PROTOBUF "Build and use Caffe2's own protobuf under third_party")
 option(BUILD_PYTHON "Build Python binaries")
 option(BUILD_CAFFE2_OPS "Build Caffe2 operators")
+
+if(DEBUG)
+  set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Debug build" FORCE)
+endif()
 
 if(RESET)
   find_package(Git)
