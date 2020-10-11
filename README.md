@@ -18,7 +18,7 @@ This restores the PyTorch source working tree from HEAD and reapplies the modifi
 The build does not generate a shared library by default. This can be disabled by passing the option `-D RESET=1 -D NO_BUILD_SHARED_LIBS=0`.
 ### Build the project
     cmake --build build
-### Display built libraries
+### Location of built libraries
     build/lib
 ### Cleaning / trouble-shooting
 #### Linux
