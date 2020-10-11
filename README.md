@@ -29,5 +29,6 @@ The default buid type is "Release". For a debug build pass option `-D CMAKE_BUIL
 #### Windows
     del build/CMakeCache.txt
     rmdir /s /q build
+    mklink /d build d:\build
 #### Restore PyTorch source without using standard ignore rules
     git clean -dfx
