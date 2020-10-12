@@ -30,7 +30,7 @@ if(RESET)
     file(WRITE ${PYTORCH_SRC_DIR}/CMakeLists.txt "${FILE_CONTENTS}")
   endif()
 
-   file(READ ${PYTORCH_SRC_DIR}/cmake/Dependencies.cmake FILE_CONTENTS)
+  file(READ ${PYTORCH_SRC_DIR}/cmake/Dependencies.cmake FILE_CONTENTS)
   string(REPLACE "add_subdirectory($\{CMAKE_SOURCE_DIR}/third_party/fmt" "add_subdirectory(${PYTORCH_SRC_DIR}/third_party/fmt ${CMAKE_BINARY_DIR}/third_party/fmt" FILE_CONTENTS "${FILE_CONTENTS}")
   file(WRITE ${PYTORCH_SRC_DIR}/cmake/Dependencies.cmake "${FILE_CONTENTS}")
 

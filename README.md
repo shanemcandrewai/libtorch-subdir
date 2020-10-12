@@ -17,7 +17,11 @@ This restores the PyTorch source working tree from HEAD and reapplies the modifi
 ###### NO_BUILD_SHARED_LIBS (dependent on RESET)
 The build generates a shared library by default. This can be disabled by passing the option `-D RESET=1 -D NO_BUILD_SHARED_LIBS=1`.
 ##### CMAKE_BUILD_TYPE 
-The default buid type is "Release". For a debug build pass option `-D CMAKE_BUILD_TYPE=Debug`
+The default buid type is `Release`. For a debug build pass option `-D CMAKE_BUILD_TYPE=Debug`
+##### CMAKE_CXX_FLAGS_DEBUG
+The default debug flag is `-g`. `-Og` enables optimizations that do not interfere with debugging
+##### CMAKE_C_FLAGS_DEBUG
+The default debug flag is `-g`. `-Og` enables optimizations that do not interfere with debugging
 ### Build the project
     cmake --build build
 ### Location of built libraries
