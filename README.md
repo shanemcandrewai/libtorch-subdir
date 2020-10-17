@@ -1,4 +1,4 @@
-# PyTorch libtorch build example 
+# PyTorch libtorch minimal build example 
 
 This CMakeLists.txt manages the building of a minimal libtorch from [PyTorch 1.6](https://github.com/pytorch/pytorch/tree/1.6) by modifying paths in the PyTorch source tree and loading the main [CMakeLists.txt](https://github.com/pytorch/pytorch/blob/v1.6.0/CMakeLists.txt) using `add_subdirectory(${PYTORCH_SRC_DIR} ${CMAKE_BINARY_DIR}/pytorch)`
 

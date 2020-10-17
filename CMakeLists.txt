@@ -5,7 +5,7 @@ project(libtorch_subdir)
 set(PYTORCH_SRC_DIR ../pytorch)
 
 include(CMakeDependentOption)
-option(RESET "Restore and clean PyTorch source tree")
+option(RESET "Restore and modify PyTorch source tree")
 CMAKE_DEPENDENT_OPTION(NO_BUILD_SHARED_LIBS "Do not build shared libraries" OFF RESET ON)
 option(USE_CUDA "disable compiling CUDA, to save compile time")
 option(USE_DISTRIBUTED "disable distributed (c10d, gloo, mpi, etc.) build")
@@ -45,7 +45,6 @@ if(RESET)
   file(READ ${PYTORCH_SRC_DIR}/caffe2/core/common.h FILE_CONTENTS)
   string(REPLACE "caffe2/core/macros.h" "${CMAKE_BINARY_DIR}/caffe2/core/macros.h" FILE_CONTENTS "${FILE_CONTENTS}")
   file(WRITE ${PYTORCH_SRC_DIR}/caffe2/core/common.h "${FILE_CONTENTS}")
-
 endif()
 
 add_subdirectory(${PYTORCH_SRC_DIR} ${CMAKE_BINARY_DIR}/pytorch)
